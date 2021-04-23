@@ -9,7 +9,7 @@
 ## Created by Alex Savochkin on 20th of April, 2021
 ## Lab 113, Department 11, Research dept. 1, VNIIFTRI
 
-clear all; clc; c = 299792458; % скорость света в вакууме, м/с
+clear all; clc; 
 
 ## Enter correct filename of each S2P-files.
 ## Here assumed that X - DUT we need to calibrate, Y and Z - auxiliary DUTs
