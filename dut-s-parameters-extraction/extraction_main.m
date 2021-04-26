@@ -9,7 +9,7 @@
 ## Created by Alex Savochkin on 20th of April, 2021
 ## Lab 113, Department 11, Research dept. 1, VNIIFTRI
 
-clear all; clc; 
+clear all; clc; c = 299792458; % скорость света в вакууме, м/с
 
 ## Enter correct filename of each S2P-files.
 ## Here assumed that X - DUT we need to calibrate, Y and Z - auxiliary DUTs
@@ -23,7 +23,6 @@ knownDeviceFilename_2 = 'YZ_C.s2p';
 [F_2 S11_2 S21_2 S12_2 S22_2] = VreadS2P(knownDeviceFilename_2);
 
 unitMatrix = [1 1 0; 1 0 1; 0 1 1];
-minusUnitMatrix = [1 1 0; 1 0 1; 0 1 1];
 
 measurementsMatrixS21 = [S21_u'; S21_1'; S21_2'];
 measurementsMatrixS12 = [S12_u'; S12_1'; S12_2'];
@@ -40,19 +39,9 @@ S12_partial = unitMatrix^(-1) * measurementsMatrixS12;
 S21_partialdb = unitMatrix^(-1) * measurementsMatrixS21db;
 S12_partialdb = unitMatrix^(-1) * measurementsMatrixS12db;
 
-S11_partial = minusUnitMatrix^(-1) * measurementsMatrixS11;
-S22_partial = minusUnitMatrix^(-1) * measurementsMatrixS22;
+S11_partial = unitMatrix^(-1) * measurementsMatrixS11;
+S22_partial = unitMatrix^(-1) * measurementsMatrixS22;
 
-##This is test piece of code for data filtration, it actually doesn't work
-##
-##clip = F_u > 13.6e9 & F_u < 19.35e9;
-##
-##S11_clip = S11_partial([clip, clip, clip]');
-##S22_clip = S22_partial(clip');
-##S21_clip = S21_partialdb(clip');
-##S12_clip = S12_partialdb(clip');
-
-##F_clip = F_u(clip)
 
 logdate = datestr(now(), 30);
 filenameTSdut = cstrcat('Calibration_data_DUT_', unknownDeviceFilename, logdate, ".txt");
