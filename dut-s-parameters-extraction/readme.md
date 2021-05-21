@@ -2,7 +2,7 @@
 
 The main idea behind this code is to calculate the S-parameters of unknown interconnective devices by solving a reversed matrix equation. Typical devices are waveguide coaxial adapters, cables, and transformers.
 
-For example, if we have devices X, Y, and Z, we should connect devices X and Y to each other and measure their overall S-parameters obtaining the result A. Then we save measurements results into a file, let's say, "XY_A.s2p", and so on with the pairs of devices A and C, and B and C.
+For example, if we have devices X, Y, and Z, we should connect devices X and Y to each other and measure their overall S-parameters obtaining the result A. Then we save measurements results into a file, let's say, "XY_A.s2p", and so on with the pairs of devices Y and Z, and Z and Z, obtaining the results B and C respectively.
 
 This allows us to measure devices that we can connect to only one port of two because of transformation coefficient or non-compliant connector type. Originally this code was written to measure the exact transmission coefficient of the coaxial waveguide adapter as the waveguide can't connect to the coaxial port of the VNA without another adapter.
 ## How to use
