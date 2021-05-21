@@ -5,6 +5,12 @@ The main idea behind this code is to calculate the S-parameters of unknown inter
 For example, if we have devices X, Y, and Z, we should connect devices X and Y to each other and measure their overall S-parameters obtaining the result A. Then we save measurements results into a file, let's say, "XY_A.s2p", and so on with the pairs of devices Y and Z, and Z and Z, obtaining the results B and C respectively.
 
 This allows us to measure devices that we can connect to only one port of two because of transformation coefficient or non-compliant connector type. Originally this code was written to measure the exact transmission coefficient of the coaxial waveguide adapter as the waveguide can't connect to the coaxial port of the VNA without another adapter.
+
+## What you need
+
+1. Any VNA with 2+ ports and capable to save .s2p files. I have used R&S ZVA50, but even NanoVNA is okay.
+2. Three similar devices even if you need to measure one of them. One port of each device must be compatible with your VNA by port type and impedance. For transformers with a transformation coefficient other than 1:1, choose any convenient end of the transformer but use the same end on all transformers. If you can connect the device under test to all 2 ports of your VNA without adapters at all, you don't need this script.
+
 ## How to use
 
  1. Measure 3 pairs of 3 [unknown] devices using VNA.
