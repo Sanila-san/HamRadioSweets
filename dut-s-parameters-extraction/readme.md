@@ -8,7 +8,7 @@ This allows us to measure devices that we can connect to only one port of two be
 
 ## What you need
 
-1. Any VNA with 2+ ports and capable to save .s2p files. I have used R&S ZVA50, but even NanoVNA is okay.
+1. Any VNA with 2 ports and capable to save .s2p files. I have used R&S ZVA50, but even NanoVNA is okay.
 2. Three similar devices even if you need to measure one of them. One port of each device must be compatible with your VNA by port type and impedance. For transformers with a transformation coefficient other than 1:1, choose any convenient end of the transformer but use the same end on all transformers. If you can connect the device under test to all 2 ports of your VNA without adapters at all, you don't need this script.
 3. GNU Octave or MATLAB. Code was originally created in Octave, check comments compatibility in the case of MATLAB.
 
